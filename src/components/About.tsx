@@ -23,21 +23,20 @@ const InfoText = styled.p`
 export const About = ({}) => {
   return (
     <AboutSection>
-      <AboutMe>About me</AboutMe>
-      <Container>
-        <InfoText>
-          I'm a software engineer lorem lorem I'm a software engineer lorem
-          lorem I'm a software engineer lorem lorem I'm a software engineer
-          lorem lorem I'm a software engineer lorem lorem I'm a software
-          engineer lorem lorem
-        </InfoText>
-        <InfoText>
-          I'm a software engineer lorem lorem I'm a software engineer lorem
-          lorem I'm a software engineer lorem lorem I'm a software engineer
-          lorem lorem I'm a software engineer lorem lorem I'm a software
-          engineer lorem lorem
-        </InfoText>
-      </Container>
+      <AboutMe>About Me</AboutMe>
+      <InfoText>
+        Hello! My name is Pavlos and i enjoy building user-friendly websites and
+        web apps. I've always loved computers and technology but it wasn't until
+        2018 that i'd discover my passion for programming and web development
+        when i started my studies.
+      </InfoText>
+      <InfoText>
+        Currently, im finishing my studies in Lapland University of Appliend
+        Sciences.
+      </InfoText>
+      <InfoText>
+        Here are a few technologies I'm currently working with:
+      </InfoText>
     </AboutSection>
   );
 };

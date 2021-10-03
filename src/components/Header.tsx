@@ -10,6 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 `;
 
 const HomeButton = styled.h1`

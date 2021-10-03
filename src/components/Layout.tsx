@@ -11,6 +11,7 @@ const Content = styled.div`
   min-height: 100vh;
   max-width: 960px;
   margin: 50px auto;
+  padding: 20px;
 `;
 
 export const Layout: React.FC<layoutProps> = ({ children }) => {
