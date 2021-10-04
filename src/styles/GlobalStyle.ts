@@ -26,12 +26,6 @@ const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     vertical-align: middle;
   }
-
-  svg {
-    width: 100%;
-    height: 100%;
-    vertical-align: middle;
-  }
 `;
 
 export default GlobalStyle;

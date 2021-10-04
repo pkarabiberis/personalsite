@@ -18,7 +18,7 @@ const First = styled.h1`
 const Second = styled.h2`
   font-size: clamp(40px, 8vw, 80px);
   font-weight: 600;
-  line-height: 66px;
+  line-height: 0.9;
   margin: 0;
 `;
 
