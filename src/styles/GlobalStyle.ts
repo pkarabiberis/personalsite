@@ -20,14 +20,16 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins";
   }
 
-  a {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    border-bottom: 1px solid transparent;
-    transition: .3s;
+  .text-link {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: .3s;
   }
+
+
 
   .project-link {
       &:hover {

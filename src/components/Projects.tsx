@@ -5,10 +5,6 @@ import { ExternalLink } from '../icons/ExternalLink';
 import { Github } from '../icons/Github';
 import theme from '../styles/theme';
 
-interface IconFill {
-  fill: boolean;
-}
-
 const ProjectSection = styled.section`
   margin-top: 50px;
 
@@ -16,10 +12,19 @@ const ProjectSection = styled.section`
     font-weight: 600;
     font-size: ${theme.fontSizes.md};
   }
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 const ProjectContainer = styled.div`
   display: flex;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -28,6 +33,10 @@ const ProjectImage = styled.div`
   border-radius: 4px;
   transition-duration: 0.3s;
   border: 1px solid #e6e6e6;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 const ProjectDescription = styled.div`
@@ -41,17 +50,40 @@ const ProjectDescription = styled.div`
     font-weight: 600;
     font-size: ${theme.fontSizes.base};
   }
+
+  li {
+    margin-bottom: 10px;
+    &:before {
+      content: 'o';
+      color: ${theme.colors.purple};
+      margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      ul {
+        display: flex;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 20px auto;
+  }
 `;
 
-const Icon = styled.span<IconFill>`
+const Icon = styled.span`
   svg {
     width: 20px;
     height: 20px;
     margin-left: 10px;
 
     &:hover {
-      fill: ${({ fill }) => (fill ? theme.colors.purple : undefined)};
-      stroke: ${({ fill }) => (!fill ? theme.colors.purple : undefined)};
+      stroke: ${theme.colors.purple};
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 `;
@@ -74,16 +106,28 @@ export const Projects = () => {
               href="https://my-spotify.karabiberisapps.com"
               target="_blank"
               rel="noreferrer"
-              className="project-link"
+              className="project-link text-link"
             >
               My Spotify
             </a>
             <div>
-              <Icon fill={false}>
-                <Github />
+              <Icon>
+                <a
+                  href="https://github.com/pkarabiberis/my-spotify-react"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github />
+                </a>
               </Icon>
-              <Icon fill={true}>
-                <ExternalLink />
+              <Icon>
+                <a
+                  href="https://my-spotify.karabiberisapps.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ExternalLink />
+                </a>
               </Icon>
             </div>
           </h1>
@@ -92,6 +136,68 @@ export const Projects = () => {
             artists, top tracks, recently played tracks, playlists and detailed
             information about each track.
           </p>
+          <ul>
+            <li>React</li>
+            <li>Styled Components</li>
+            <li>Spotify API</li>
+            <li>Express</li>
+            <li>Docker</li>
+          </ul>
+        </ProjectDescription>
+      </ProjectContainer>
+      <ProjectContainer>
+        <ProjectImage>
+          <StaticImage
+            alt="My Spotify project image"
+            src="../images/issuetracker.png"
+            quality={100}
+          />
+        </ProjectImage>
+        <ProjectDescription>
+          <h1>
+            <a
+              href="https://my-spotify.karabiberisapps.com"
+              target="_blank"
+              rel="noreferrer"
+              className="project-link text-link"
+            >
+              Issuetracker
+            </a>
+            <div>
+              <Icon>
+                <a
+                  href="https://github.com/pkarabiberis/my-spotify-react"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github />
+                </a>
+              </Icon>
+              <Icon>
+                <a
+                  href="https://my-spotify.karabiberisapps.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ExternalLink />
+                </a>
+              </Icon>
+            </div>
+          </h1>
+          <p>
+            A web application that shows your Spotify data. Includes top
+            artists, top tracks, recently played tracks, playlists and detailed
+            information about each track.
+          </p>
+          <ul>
+            <li>React</li>
+            <li>Chakra UI</li>
+            <li>GraphQL</li>
+            <li>Apollo</li>
+            <li>PostgreSQL</li>
+            <li>Next.js</li>
+            <li>Docker</li>
+          </ul>
         </ProjectDescription>
       </ProjectContainer>
     </ProjectSection>

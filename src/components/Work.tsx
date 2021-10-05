@@ -4,6 +4,7 @@ import theme from '../styles/theme';
 
 const WorkSection = styled.section`
   margin-top: 50px;
+  max-width: 500px;
 
   h2 {
     font-weight: 600;
@@ -52,7 +53,7 @@ export const Work = () => {
         <span className="company">
           &nbsp;@&nbsp;
           <a
-            className="company-link"
+            className="company-link text-link"
             href={'https://www.marjetas.fi'}
             target="_blank"
             rel="noreferrer"
@@ -77,7 +78,7 @@ export const Work = () => {
           &nbsp;@&nbsp;
           <a
             href={'https://www.frostbit.fi'}
-            className="company-link"
+            className="company-link text-link"
             target="_blank"
             rel="noreferrer"
           >
