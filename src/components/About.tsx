@@ -15,11 +15,11 @@ const AboutSection = styled.section`
   @media (max-width: 768px) {
     margin: 50px auto;
   }
-`;
 
-const AboutMe = styled.h2`
-  font-weight: 600;
-  font-size: ${theme.fontSizes.md};
+  h2 {
+    font-weight: 600;
+    font-size: ${theme.fontSizes.md};
+  }
 `;
 
 const Container = styled.div`
@@ -40,20 +40,14 @@ const StyledText = styled.div`
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
     grid-gap: 10px 20px;
-    padding: 0;
-    list-style: none;
   }
-`;
-
-const InfoText = styled.p`
-  color: ${theme.colors.grey};
 `;
 
 const StyledImg = styled.div`
   max-width: 300px;
 
   @media (max-width: 768px) {
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
   }
 `;
 
@@ -85,22 +79,20 @@ export const About = ({}) => {
 
   return (
     <AboutSection>
-      <AboutMe>About Me</AboutMe>
+      <h2>About Me</h2>
       <Container>
         <StyledText>
-          <InfoText>
+          <p>
             Hello! My name is Pavlos and I enjoy building user-friendly websites
             and web apps. I've always loved computers and technology but it
             wasn't until 2018 that I'd discover my passion for programming and
             web development when I started my studies.
-          </InfoText>
-          <InfoText>
+          </p>
+          <p>
             Currently, im finishing my studies in Lapland University of Appliend
             Sciences.
-          </InfoText>
-          <InfoText>
-            Here are a few technologies I'm currently working with:
-          </InfoText>
+          </p>
+          <p>Here are a few technologies I'm currently working with:</p>
           <ul>
             {usedTech.map(({ icon, tech }) => (
               <li key={tech}>

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -17,6 +18,41 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     overflow-x: hidden;
     font-family: "Poppins";
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: .3s;
+  }
+
+  .project-link {
+      &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+
+    .company-link {
+      &:hover {
+      border-bottom: 1px solid ${theme.colors.purple};
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    color: ${theme.colors.grey};
+  }
+
+  p {
+    color: ${theme.colors.grey};
+    line-height: 1.3;
   }
 
   img,

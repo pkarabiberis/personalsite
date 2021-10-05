@@ -3,7 +3,7 @@ import React from 'react';
 export const JavaScript = () => (
   <svg
     stroke="currentColor"
-    stroke-width="0"
+    strokeWidth="0"
     role="img"
     viewBox="0 0 24 24"
     fill="#7633CC"

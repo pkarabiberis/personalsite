@@ -3,6 +3,8 @@ import { About } from '../components/About';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Layout } from '../components/Layout';
+import { Projects } from '../components/Projects';
+import { Work } from '../components/Work';
 
 interface IndexProps {}
 
@@ -13,6 +15,8 @@ const Index: React.FC<IndexProps> = ({}) => {
       <Layout>
         <Hero />
         <About />
+        <Work />
+        <Projects />
       </Layout>
     </>
   );
