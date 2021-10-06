@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins";
   }
 
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
   .text-link {
       display: inline-block;
       text-decoration: none;

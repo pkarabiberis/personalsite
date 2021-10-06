@@ -5,6 +5,10 @@ import { ExternalLink } from '../icons/ExternalLink';
 import { Github } from '../icons/Github';
 import theme from '../styles/theme';
 
+interface Placement {
+  left?: boolean;
+}
+
 const ProjectSection = styled.section`
   margin-top: 50px;
 
@@ -18,30 +22,32 @@ const ProjectSection = styled.section`
   }
 `;
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.div<Placement>`
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 
   @media (max-width: 768px) {
-    display: block;
+    flex-direction: column;
+    flex-direction: ${({ left }) => left && 'column-reverse'};
+    margin-bottom: 50px;
   }
 `;
 
 const ProjectImage = styled.div`
   flex: 1;
   width: 100%;
-  border-radius: 4px;
   transition-duration: 0.3s;
   border: 1px solid #e6e6e6;
-
+  height: fit-content;
   &:hover {
     transform: scale(1.03);
   }
 `;
 
-const ProjectDescription = styled.div`
+const ProjectDescription = styled.div<Placement>`
   width: 30%;
-  margin-left: 25px;
+  margin-left: ${({ left }) => (!left ? '25px' : 0)};
+  margin-right: ${({ left }) => (left ? '25px' : 0)};
   h1 {
     display: flex;
     align-items: center;
@@ -52,23 +58,25 @@ const ProjectDescription = styled.div`
   }
 
   li {
-    margin-bottom: 10px;
-    &:before {
-      content: 'o';
-      color: ${theme.colors.purple};
-      margin-right: 5px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
 
-    @media (max-width: 768px) {
-      ul {
-        display: flex;
-      }
+    &:before {
+      content: 'o';
+
+      color: ${theme.colors.purple};
+      margin-right: 5px;
     }
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
+
+    ul {
+      text-align: center;
+    }
   }
 `;
 
@@ -100,7 +108,7 @@ export const Projects = () => {
             quality={100}
           />
         </ProjectImage>
-        <ProjectDescription>
+        <ProjectDescription left={false}>
           <h1>
             <a
               href="https://my-spotify.karabiberisapps.com"
@@ -138,25 +146,19 @@ export const Projects = () => {
           </p>
           <ul>
             <li>React</li>
-            <li>Styled Components</li>
+            <li>TypeScript</li>
             <li>Spotify API</li>
             <li>Express</li>
             <li>Docker</li>
+            <li>Styled Components</li>
           </ul>
         </ProjectDescription>
       </ProjectContainer>
-      <ProjectContainer>
-        <ProjectImage>
-          <StaticImage
-            alt="My Spotify project image"
-            src="../images/issuetracker.png"
-            quality={100}
-          />
-        </ProjectImage>
-        <ProjectDescription>
+      <ProjectContainer left>
+        <ProjectDescription left>
           <h1>
             <a
-              href="https://my-spotify.karabiberisapps.com"
+              href="https://issuetracker.karabiberisapps.com"
               target="_blank"
               rel="noreferrer"
               className="project-link text-link"
@@ -166,7 +168,7 @@ export const Projects = () => {
             <div>
               <Icon>
                 <a
-                  href="https://github.com/pkarabiberis/my-spotify-react"
+                  href="https://github.com/pkarabiberis/issuetracker"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -175,7 +177,7 @@ export const Projects = () => {
               </Icon>
               <Icon>
                 <a
-                  href="https://my-spotify.karabiberisapps.com/"
+                  href="https://issuetracker.karabiberisapps.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -185,9 +187,8 @@ export const Projects = () => {
             </div>
           </h1>
           <p>
-            A web application that shows your Spotify data. Includes top
-            artists, top tracks, recently played tracks, playlists and detailed
-            information about each track.
+            An issue tracker application where users can make projects and
+            issues.
           </p>
           <ul>
             <li>React</li>
@@ -196,9 +197,19 @@ export const Projects = () => {
             <li>Apollo</li>
             <li>PostgreSQL</li>
             <li>Next.js</li>
+            <li>Redis</li>
+            <li>TypeORM</li>
+            <li>TypeGraphQL</li>
             <li>Docker</li>
           </ul>
         </ProjectDescription>
+        <ProjectImage>
+          <StaticImage
+            alt="Issuetracker project image"
+            src="../images/issuetracker.png"
+            quality={100}
+          />
+        </ProjectImage>
       </ProjectContainer>
     </ProjectSection>
   );
