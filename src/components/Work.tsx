@@ -6,11 +6,6 @@ const WorkSection = styled.section`
   margin-top: 50px;
   max-width: 500px;
 
-  h2 {
-    font-weight: 600;
-    font-size: ${theme.fontSizes.md};
-  }
-
   h3 {
     font-weight: 500;
     line-height: 1.1;
@@ -62,7 +57,8 @@ export const Work = () => {
           </a>
         </span>
       </h3>
-      <p>May - September 2021 Full time | Oct 2020 - May 2021 Intership</p>
+      <p>May - September 2021 Full time</p>
+      <p>Oct 2020 - May 2021 Intership</p>
       <ul>
         <li>
           Developed and maintained code for in-house websites using HTML, CSS

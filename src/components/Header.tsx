@@ -21,7 +21,7 @@ const HomeButton = styled.h1`
 export const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <Container>
-      <HomeButton>PK</HomeButton>
+      <HomeButton>P</HomeButton>
       <Socials />
     </Container>
   );

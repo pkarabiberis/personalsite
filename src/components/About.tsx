@@ -15,11 +15,6 @@ const AboutSection = styled.section`
   @media (max-width: 768px) {
     margin: 50px auto;
   }
-
-  h2 {
-    font-weight: 600;
-    font-size: ${theme.fontSizes.md};
-  }
 `;
 
 const Container = styled.div`
@@ -85,8 +80,8 @@ export const About = ({}) => {
           <p>
             Hello! My name is Pavlos and I enjoy building user-friendly websites
             and web apps. I've always loved computers and technology but it
-            wasn't until 2018 that I'd discover my passion for programming and
-            web development when I started my studies.
+            wasn't until 2018 that I would discover my passion for programming
+            and web development when I started my studies.
           </p>
           <p>
             Currently, im finishing my studies in Lapland University of Appliend

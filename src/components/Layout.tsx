@@ -10,7 +10,7 @@ const Content = styled.div`
   flex-direction: column;
   min-height: 100vh;
   max-width: 960px;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   padding: 20px;
 `;
 

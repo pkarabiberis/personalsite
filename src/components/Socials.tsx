@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Github } from '../icons/Github';
 import { Linkedin } from '../icons/Linkedin';
-import theme from '../styles/theme';
 
 interface SocialsProps {}
 
@@ -23,10 +22,6 @@ const Icon = styled.span`
     height: 20px;
     margin-left: 20px;
 
-    &:hover {
-      stroke: ${theme.colors.purple};
-    }
-
     a {
       text-decoration: none;
     }
@@ -37,16 +32,16 @@ export const Socials: React.FC<SocialsProps> = ({}) => {
   return (
     <SocialsContainer>
       <Line />
-      <Icon>
+      <Icon className="icon-link">
         <a
-          href="https://www.linkedin.com/in/pavlos-karabiberis-7205331b5"
+          href="https://www.linkedin.com/in/pavloskarabiberis"
           target="_blank"
           rel="noreferrer"
         >
           <Linkedin />
         </a>
       </Icon>
-      <Icon>
+      <Icon className="icon-link">
         <a
           href="https://github.com/pkarabiberis"
           target="_blank"

@@ -12,11 +12,6 @@ interface Placement {
 const ProjectSection = styled.section`
   margin-top: 50px;
 
-  h2 {
-    font-weight: 600;
-    font-size: ${theme.fontSizes.md};
-  }
-
   @media (max-width: 768px) {
     margin-top: 0;
   }
@@ -37,8 +32,8 @@ const ProjectImage = styled.div`
   flex: 1;
   width: 100%;
   transition-duration: 0.3s;
-  border: 1px solid #e6e6e6;
   height: fit-content;
+  border: 1px solid #e6e6e6;
   &:hover {
     transform: scale(1.03);
   }
@@ -57,16 +52,18 @@ const ProjectDescription = styled.div<Placement>`
     font-size: ${theme.fontSizes.base};
   }
 
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+
   li {
+    font-size: 12px;
+    font-weight: 500;
+
     &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    &:before {
-      content: 'o';
-
-      color: ${theme.colors.purple};
-      margin-right: 5px;
+      margin-bottom: 5px;
     }
   }
 
@@ -75,7 +72,9 @@ const ProjectDescription = styled.div<Placement>`
     margin: 20px auto 0 auto;
 
     ul {
-      text-align: center;
+      margin: auto;
+      width: fit-content;
+      justify-items: center;
     }
   }
 `;
@@ -85,10 +84,6 @@ const Icon = styled.span`
     width: 20px;
     height: 20px;
     margin-left: 10px;
-
-    &:hover {
-      stroke: ${theme.colors.purple};
-    }
 
     a {
       text-decoration: none;
@@ -119,7 +114,7 @@ export const Projects = () => {
               My Spotify
             </a>
             <div>
-              <Icon>
+              <Icon className="icon-link">
                 <a
                   href="https://github.com/pkarabiberis/my-spotify-react"
                   target="_blank"
@@ -128,7 +123,7 @@ export const Projects = () => {
                   <Github />
                 </a>
               </Icon>
-              <Icon>
+              <Icon className="icon-link">
                 <a
                   href="https://my-spotify.karabiberisapps.com/"
                   target="_blank"
@@ -166,7 +161,7 @@ export const Projects = () => {
               Issuetracker
             </a>
             <div>
-              <Icon>
+              <Icon className="icon-link">
                 <a
                   href="https://github.com/pkarabiberis/issuetracker"
                   target="_blank"
@@ -175,7 +170,7 @@ export const Projects = () => {
                   <Github />
                 </a>
               </Icon>
-              <Icon>
+              <Icon className="icon-link">
                 <a
                   href="https://issuetracker.karabiberisapps.com/"
                   target="_blank"
