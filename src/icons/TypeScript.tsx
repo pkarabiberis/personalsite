@@ -7,7 +7,7 @@ export const TypeScript = () => (
     width="48px"
     height="48px"
   >
-    <rect width="36" height="36" x="6" y="6" fill="#7633CC" />
+    <rect width="36" height="36" x="6" y="6" fill="#319795" />
     <polygon
       fill="#fff"
       points="27.49,22 14.227,22 14.227,25.264 18.984,25.264 18.984,40 22.753,40 22.753,25.264 27.49,25.264"

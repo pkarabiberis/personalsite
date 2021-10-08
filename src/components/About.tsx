@@ -7,13 +7,12 @@ import { JavaScript } from '../icons/JavaScript';
 import { NextJS } from '../icons/NextJS';
 import { ReactIcon } from '../icons/ReactIcon';
 import { TypeScript } from '../icons/TypeScript';
-import theme from '../styles/theme';
 
 const AboutSection = styled.section`
-  margin-top: 50px;
+  padding: 40px 0;
 
   @media (max-width: 768px) {
-    margin: 50px auto;
+    margin: auto;
   }
 `;
 
@@ -56,9 +55,6 @@ const TechText = styled.div`
     padding-right: 5px;
   }
 
-  color: ${theme.colors.grey};
-  font-size: 12px;
-  font-weight: 500;
   white-space: break-spaces;
 `;
 
@@ -100,7 +96,10 @@ export const About = ({}) => {
           </ul>
         </StyledText>
         <StyledImg>
-          <StaticImage alt="Profile image" src="../images/icon.png" />
+          <StaticImage
+            alt="Profile image"
+            src="https://media.istockphoto.com/photos/pedestal-or-product-podium-mockup-isolated-from-teal-colored-picture-id1266423763?b=1&k=20&m=1266423763&s=170667a&w=0&h=wQ8biqEZcAYtf7IPzg4QD8SVAMY010tuBQggaAKDwXE="
+          />
         </StyledImg>
       </Container>
     </AboutSection>

@@ -10,11 +10,25 @@ interface Placement {
 }
 
 const ProjectSection = styled.section`
-  margin-top: 50px;
+  padding: 40px 0;
+`;
 
-  @media (max-width: 768px) {
-    margin-top: 0;
+const NewProjectContainer = styled.div`
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background-color: #0000000a;
+  border: 1px solid #0000000a;
+  border-radius: 1em;
+`;
+
+const NewProjectDescription = styled.div``;
+
+const NewProjectImage = styled.div`
+  &:hover {
+    transform: scale(1.03);
   }
+  padding: 5px;
 `;
 
 const ProjectContainer = styled.div<Placement>`
@@ -48,22 +62,25 @@ const ProjectDescription = styled.div<Placement>`
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     font-size: ${theme.fontSizes.base};
   }
 
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
+    grid-row-gap: 5px;
   }
 
   li {
+    display: flex;
     font-size: 12px;
     font-weight: 500;
 
-    &:not(:last-child) {
-      margin-bottom: 5px;
+    &:before {
+      content: 'o';
+      color: ${theme.colors.teal};
+      margin-right: 5px;
     }
   }
 
@@ -73,8 +90,8 @@ const ProjectDescription = styled.div<Placement>`
 
     ul {
       margin: auto;
-      width: fit-content;
-      justify-items: center;
+      max-width: 300px;
+      grid-column-gap: 5px;
     }
   }
 `;
@@ -84,10 +101,6 @@ const Icon = styled.span`
     width: 20px;
     height: 20px;
     margin-left: 10px;
-
-    a {
-      text-decoration: none;
-    }
   }
 `;
 

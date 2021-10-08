@@ -6,7 +6,7 @@ export const JavaScript = () => (
     strokeWidth="0"
     role="img"
     viewBox="0 0 24 24"
-    fill="#7633CC"
+    fill="#319795"
     xmlns="http://www.w3.org/2000/svg"
   >
     <title></title>

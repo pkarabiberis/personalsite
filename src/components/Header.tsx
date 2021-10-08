@@ -5,7 +5,7 @@ import { Socials } from './Socials';
 
 interface HeaderProps {}
 
-const Container = styled.div`
+const Container = styled.header`
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -14,7 +14,6 @@ const Container = styled.div`
 `;
 
 const HomeButton = styled.h1`
-  color: ${theme.colors.purple};
   font-size: ${theme.fontSizes.md};
 `;
 

@@ -2,6 +2,8 @@ const theme = {
   colors: {
     purple: '#7633CC',
     grey: '#696969',
+    teal: '#319795',
+    darkGrey: '#1A202C',
   },
 
   fontSizes: {

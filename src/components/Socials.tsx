@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Github } from '../icons/Github';
 import { Linkedin } from '../icons/Linkedin';
+import theme from '../styles/theme';
 
 interface SocialsProps {}
 
@@ -13,7 +14,7 @@ const SocialsContainer = styled.div`
 const Line = styled.div`
   width: 200px;
   height: 1px;
-  background-color: #e6e6e6;
+  background-color: ${theme.colors.darkGrey};
 `;
 
 const Icon = styled.span`

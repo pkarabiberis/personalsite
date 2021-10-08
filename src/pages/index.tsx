@@ -18,8 +18,8 @@ const Index: React.FC<IndexProps> = ({}) => {
         <About />
         <Work />
         <Projects />
+        <Contact />
       </Layout>
-      <Contact />
     </>
   );
 };

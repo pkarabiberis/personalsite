@@ -5,9 +5,8 @@ import { Github } from '../icons/Github';
 import { Linkedin } from '../icons/Linkedin';
 
 const ContactSection = styled.footer`
-  background-color: rgb(252, 252, 252);
-  padding: 50px 20px 15px 20px;
-  margin: 50px auto 0 auto;
+  padding: 40px 0 15px 0;
+  margin: auto;
   text-align: center;
 
   p {

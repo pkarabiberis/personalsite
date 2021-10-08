@@ -5,7 +5,7 @@ import theme from '../styles/theme';
 
 interface layoutProps {}
 
-const Content = styled.div`
+const Content = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;

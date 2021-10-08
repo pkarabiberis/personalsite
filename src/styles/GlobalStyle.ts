@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     overflow-x: hidden;
     font-family: "Poppins";
+    background-color: #EDF2F7;
+    color: ${theme.colors.darkGrey};
   }
 
   a {
@@ -33,16 +35,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-weight: 600;
+    font-weight: 700;
+    color: ${theme.colors.darkGrey};
     font-size: clamp(20px, 8vw, ${theme.fontSizes.md});
   }
 
   .icon-link {
     a {
       &:hover {
-        color:  ${theme.colors.purple};
+        color:  ${theme.colors.teal};
         svg {
-          stroke: ${theme.colors.purple};
+          stroke: ${theme.colors.teal};
         }
       }
     }
@@ -56,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
 
   .company-link {
     &:hover {
-      border-bottom: 1px solid ${theme.colors.purple};
+      border-bottom: 1px solid ${theme.colors.teal};
     }
   }
 
@@ -66,14 +69,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   li {
-    color: ${theme.colors.grey};
-    letter-spacing: 0.03em;
+    font-size: 13px;
   }
 
-  p {
-    color: ${theme.colors.grey};
-    line-height: 1.3;
-    letter-spacing: 0.03em;
+  p, li {
+    color: ${theme.colors.darkGrey};
+    line-height: 1.5;
   }
 
   img,

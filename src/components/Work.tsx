@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import theme from '../styles/theme';
 
 const WorkSection = styled.section`
-  margin-top: 50px;
+  padding: 40px 0;
   max-width: 500px;
 
   h3 {
@@ -13,7 +13,7 @@ const WorkSection = styled.section`
   }
 
   .company {
-    color: ${theme.colors.purple};
+    color: ${theme.colors.teal};
   }
 
   li {
@@ -22,7 +22,7 @@ const WorkSection = styled.section`
     &:before {
       content: 'o';
       display: block;
-      color: ${theme.colors.purple};
+      color: ${theme.colors.teal};
       font-weight: 500;
       margin-right: 5px;
     }
@@ -34,7 +34,7 @@ const WorkSection = styled.section`
   }
 
   @media (max-width: 768px) {
-    margin: 50px auto;
+    margin: auto;
   }
 `;
 
