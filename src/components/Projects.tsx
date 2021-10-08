@@ -17,46 +17,93 @@ const NewProjectContainer = styled.div`
   display: grid;
   grid-gap: 0px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  background-color: #0000000a;
-  border: 1px solid #0000000a;
-  border-radius: 1em;
 `;
 
-const NewProjectDescription = styled.div``;
+const NewProjectDescription = styled.div`
+  background-color: #0000000a;
+  border-left: 1px solid #0000000a;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+
+  h1,
+  p,
+  ul {
+    margin-left: 15px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 5px;
+  }
+
+  li {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+
+    &:before {
+      content: 'o';
+      color: ${theme.colors.teal};
+      margin-right: 5px;
+    }
+  }
+`;
 
 const NewProjectImage = styled.div`
   &:hover {
     transform: scale(1.03);
   }
-  padding: 5px;
+
+  .gatsby-image-wrapper {
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
 `;
 
 const ProjectContainer = styled.div<Placement>`
   display: flex;
-  margin-bottom: 50px;
+  padding: 40px 0;
 
   @media (max-width: 768px) {
     flex-direction: column;
     flex-direction: ${({ left }) => left && 'column-reverse'};
-    margin-bottom: 50px;
+    padding: 40px 0;
   }
 `;
 
 const ProjectImage = styled.div`
   flex: 1;
   width: 100%;
+  position: relative;
   transition-duration: 0.3s;
   height: fit-content;
-  border: 1px solid #e6e6e6;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: #31979518;
+    border-radius: 1em;
+    border: 1px solid #adb8b776;
+  }
   &:hover {
     transform: scale(1.03);
+
+    &:before {
+      background: transparent;
+    }
+  }
+
+  .gatsby-image-wrapper {
+    border-radius: 1em;
   }
 `;
 
 const ProjectDescription = styled.div<Placement>`
-  width: 30%;
-  margin-left: ${({ left }) => (!left ? '25px' : 0)};
-  margin-right: ${({ left }) => (left ? '25px' : 0)};
+  width: 50%;
+
   h1 {
     display: flex;
     align-items: center;
@@ -64,6 +111,13 @@ const ProjectDescription = styled.div<Placement>`
     margin: 0;
     font-weight: 700;
     font-size: ${theme.fontSizes.base};
+  }
+
+  h1,
+  p,
+  ul {
+    margin-left: ${({ left }) => (!left ? '25px' : 0)};
+    margin-right: ${({ left }) => (left ? '25px' : 0)};
   }
 
   ul {
@@ -219,6 +273,34 @@ export const Projects = () => {
           />
         </ProjectImage>
       </ProjectContainer>
+      {/* <NewProjectContainer>
+        <NewProjectDescription>
+          <h1>Issue Tracker</h1>
+          <p>
+            An issue tracker application where users can make projects and
+            issues.
+          </p>
+          <ul>
+            <li>React</li>
+            <li>Chakra UI</li>
+            <li>GraphQL</li>
+            <li>Apollo</li>
+            <li>PostgreSQL</li>
+            <li>Next.js</li>
+            <li>Redis</li>
+            <li>TypeORM</li>
+            <li>TypeGraphQL</li>
+            <li>Docker</li>
+          </ul>
+        </NewProjectDescription>
+        <NewProjectImage>
+          <StaticImage
+            alt="Issuetracker project image"
+            src="../images/issuetracker.png"
+            quality={100}
+          />
+        </NewProjectImage>
+      </NewProjectContainer> */}
     </ProjectSection>
   );
 };

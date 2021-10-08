@@ -37,7 +37,7 @@ export const Hero = () => {
     <HeroSection>
       <First>Hi, my name is</First>
       <Second>Pavlos Karabiberis.</Second>
-      <Third>Software Engineer</Third>
+      <Third>Software Engineer and student</Third>
     </HeroSection>
   );
 };
