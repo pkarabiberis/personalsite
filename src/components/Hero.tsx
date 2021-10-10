@@ -28,8 +28,7 @@ const Third = styled.h2`
   font-size: clamp(20px, 4vw, 30px);
   color: ${theme.colors.teal};
   font-weight: 700;
-  line-height: 72px;
-  margin: 10px 0 0 4px;
+  margin-top: 10px;
 `;
 
 export const Hero = () => {

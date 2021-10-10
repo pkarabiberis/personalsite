@@ -13,54 +13,6 @@ const ProjectSection = styled.section`
   padding: 40px 0;
 `;
 
-const NewProjectContainer = styled.div`
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-`;
-
-const NewProjectDescription = styled.div`
-  background-color: #0000000a;
-  border-left: 1px solid #0000000a;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-
-  h1,
-  p,
-  ul {
-    margin-left: 15px;
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 5px;
-  }
-
-  li {
-    display: flex;
-    font-size: 12px;
-    font-weight: 500;
-
-    &:before {
-      content: 'o';
-      color: ${theme.colors.teal};
-      margin-right: 5px;
-    }
-  }
-`;
-
-const NewProjectImage = styled.div`
-  &:hover {
-    transform: scale(1.03);
-  }
-
-  .gatsby-image-wrapper {
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-  }
-`;
-
 const ProjectContainer = styled.div<Placement>`
   display: flex;
   padding: 40px 0;
@@ -142,8 +94,13 @@ const ProjectDescription = styled.div<Placement>`
     width: 100%;
     margin: 20px auto 0 auto;
 
+    h1,
+    p {
+      margin: 5px auto 0 auto;
+    }
+
     ul {
-      margin: auto;
+      margin: 25px auto 0 auto;
       max-width: 300px;
       grid-column-gap: 5px;
     }

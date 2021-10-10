@@ -16,6 +16,7 @@ const ContactSection = styled.footer`
 
   .copyright {
     margin: 50px auto 0 auto;
+    font-size: 13px;
   }
 
   .social-buttons {
