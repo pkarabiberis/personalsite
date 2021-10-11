@@ -73,7 +73,7 @@ export const Contact = ({}) => {
         </a>
       </div>
 
-      <p className="copyright">Designed & Created by Pavlos Karabiberis</p>
+      <p className="copyright">Created by Pavlos Karabiberis</p>
     </ContactSection>
   );
 };

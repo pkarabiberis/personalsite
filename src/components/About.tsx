@@ -29,6 +29,9 @@ const Container = styled.div`
 
 const StyledText = styled.div`
   max-width: 500px;
+  p {
+    margin-top: 0;
+  }
 
   ul {
     display: grid;

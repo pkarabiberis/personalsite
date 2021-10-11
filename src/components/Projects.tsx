@@ -1,4 +1,6 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { ExternalLink } from '../icons/ExternalLink';
@@ -15,12 +17,10 @@ const ProjectSection = styled.section`
 
 const ProjectContainer = styled.div<Placement>`
   display: flex;
-  padding: 40px 0;
-
+  margin: 40px 0 60px;
+  flex-direction: ${({ left }) => left && 'row-reverse'};
   @media (max-width: 768px) {
     flex-direction: column;
-    flex-direction: ${({ left }) => left && 'column-reverse'};
-    padding: 40px 0;
   }
 `;
 
@@ -116,10 +116,126 @@ const Icon = styled.span`
 `;
 
 export const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      projects: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/projects/" } }
+        sort: { fields: [frontmatter___order], order: ASC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              imageSrc {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 700
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+              github
+              url
+              tech
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  const projects = data.projects.edges.map(({ node }: any) => node);
   return (
     <ProjectSection>
       <h2>Things I've Built</h2>
-      <ProjectContainer>
+      {projects.map(
+        (project: any, i: any) => {
+          const { frontmatter, html } = project;
+          const { title, imageSrc, github, url, tech } = frontmatter;
+          const image = getImage(imageSrc);
+          return (
+            <ProjectContainer key={title} left={(i + 1) % 2 !== 0}>
+              <ProjectImage>
+                <GatsbyImage alt={`${title} project image`} image={image!} />
+              </ProjectImage>
+
+              <ProjectDescription left={(i + 1) % 2 !== 0}>
+                <h1>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-link text-link"
+                  >
+                    {title}
+                  </a>
+                  <div>
+                    <Icon className="icon-link">
+                      <a href={github} target="_blank" rel="noreferrer">
+                        <Github />
+                      </a>
+                    </Icon>
+                    <Icon className="icon-link">
+                      <a href={url} target="_blank" rel="noreferrer">
+                        <ExternalLink />
+                      </a>
+                    </Icon>
+                  </div>
+                </h1>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <ul>
+                  {tech.map((t: any) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </ProjectDescription>
+            </ProjectContainer>
+          );
+        }
+
+        // <ProjectContainer left={left} key={name}>
+        //   <ProjectImage>
+        //     <StaticImage
+        //       alt={`${name} project image`}
+        //       src={imgSrc}
+        //       quality={100}
+        //     />
+        //   </ProjectImage>
+        //   <ProjectDescription left={left}>
+        //     <h1>
+        //       <a
+        //         href={url}
+        //         target="_blank"
+        //         rel="noreferrer"
+        //         className="project-link text-link"
+        //       >
+        //         {name}
+        //       </a>
+        //       <div>
+        //         <Icon className="icon-link">
+        //           <a href={github} target="_blank" rel="noreferrer">
+        //             <Github />
+        //           </a>
+        //         </Icon>
+        //         <Icon className="icon-link">
+        //           <a href={url} target="_blank" rel="noreferrer">
+        //             <ExternalLink />
+        //           </a>
+        //         </Icon>
+        //       </div>
+        //     </h1>
+        //     <p>{description}</p>
+        //     <ul>
+        //       {tech.map((t) => (
+        //         <li key={t}>{t}</li>
+        //       ))}
+        //     </ul>
+        //   </ProjectDescription>
+        // </ProjectContainer>
+      )}
+      {/* <ProjectContainer>
         <ProjectImage>
           <StaticImage
             alt="My Spotify project image"
@@ -229,7 +345,7 @@ export const Projects = () => {
             quality={100}
           />
         </ProjectImage>
-      </ProjectContainer>
+      </ProjectContainer> */}
       {/* <NewProjectContainer>
         <NewProjectDescription>
           <h1>Issue Tracker</h1>
