@@ -2,4 +2,4 @@
 
 Built with React, Gatsby, Styled Components
 
-![img](https://imgur.com/a/1HZg098)
+![Image of portfolio page](src/images/portfoliopage.png)
