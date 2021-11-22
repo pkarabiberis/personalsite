@@ -1,6 +1,7 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../styles/theme';
+import { Logo } from '../icons/Logo';
 import { Socials } from './Socials';
 
 interface HeaderProps {}
@@ -13,14 +14,22 @@ const Container = styled.header`
   padding: 20px;
 `;
 
-const HomeButton = styled.h1`
-  font-size: ${theme.fontSizes.md};
+const LogoContainer = styled.div`
+  svg {
+    vertical-align: middle;
+    height: 40px;
+    width: 40px;
+  }
 `;
 
 export const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <Container>
-      <HomeButton>P</HomeButton>
+      <LogoContainer>
+        <Link to="/">
+          <Logo />
+        </Link>
+      </LogoContainer>
       <Socials />
     </Container>
   );

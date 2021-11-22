@@ -12,6 +12,7 @@ interface IndexProps {}
 const Index: React.FC<IndexProps> = ({}) => {
   return (
     <>
+      <title>Pavlos Karabiberis</title>
       <Header />
       <Layout>
         <Hero />

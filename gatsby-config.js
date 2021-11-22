@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'Portfolio site',
+    siteUrl: 'https://www.pavloskarabiberis.com',
+    title: 'Pavlos Karabiberis - Software Engineer',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -9,13 +9,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -23,13 +17,7 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects`,
-      },
-    },
+
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-google-fonts`,

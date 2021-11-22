@@ -10,10 +10,6 @@ import { TypeScript } from '../icons/TypeScript';
 
 const AboutSection = styled.section`
   padding: 40px 0;
-
-  @media (max-width: 768px) {
-    margin: auto;
-  }
 `;
 
 const Container = styled.div`
@@ -23,7 +19,6 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    margin: auto;
   }
 `;
 
@@ -41,10 +36,33 @@ const StyledText = styled.div`
 `;
 
 const StyledImg = styled.div`
-  max-width: 300px;
+  position: relative;
+  transition-duration: 0.3s;
+  height: fit-content;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: #31979518;
+    border-radius: 1em;
+    border: 1px solid #adb8b776;
+  }
+  &:hover {
+    transform: scale(1.03);
 
+    &:before {
+      background: transparent;
+    }
+  }
   @media (max-width: 768px) {
-    margin: 50px auto 0 auto;
+    margin: 50px auto 0;
+    max-width: 280px;
+  }
+
+  .gatsby-image-wrapper {
+    border-radius: 1em;
   }
 `;
 
@@ -101,7 +119,8 @@ export const About = ({}) => {
         <StyledImg>
           <StaticImage
             alt="Profile image"
-            src="https://media.istockphoto.com/photos/pedestal-or-product-podium-mockup-isolated-from-teal-colored-picture-id1266423763?b=1&k=20&m=1266423763&s=170667a&w=0&h=wQ8biqEZcAYtf7IPzg4QD8SVAMY010tuBQggaAKDwXE="
+            src="../images/me.png"
+            quality={95}
           />
         </StyledImg>
       </Container>

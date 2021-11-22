@@ -6,7 +6,6 @@ import { Linkedin } from '../icons/Linkedin';
 
 const ContactSection = styled.footer`
   padding: 40px 0 15px 0;
-  margin: auto;
   text-align: center;
 
   p {
