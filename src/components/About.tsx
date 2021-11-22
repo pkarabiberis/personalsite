@@ -7,6 +7,7 @@ import { JavaScript } from '../icons/JavaScript';
 import { NextJS } from '../icons/NextJS';
 import { ReactIcon } from '../icons/ReactIcon';
 import { TypeScript } from '../icons/TypeScript';
+import theme from '../styles/theme';
 
 const AboutSection = styled.section`
   padding: 40px 0;
@@ -47,7 +48,7 @@ const StyledImg = styled.div`
     z-index: 3;
     background: #31979518;
     border-radius: 1em;
-    border: 1px solid #adb8b776;
+    border: 2px solid ${theme.colors.teal};
   }
   &:hover {
     transform: scale(1.03);

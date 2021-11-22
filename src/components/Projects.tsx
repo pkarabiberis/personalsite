@@ -38,7 +38,7 @@ const ProjectImage = styled.div`
     z-index: 3;
     background: #31979518;
     border-radius: 1em;
-    border: 1px solid #adb8b776;
+    border: 2px solid #adb8b776;
   }
   &:hover {
     transform: scale(1.03);
