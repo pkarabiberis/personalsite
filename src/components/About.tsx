@@ -102,8 +102,8 @@ export const About = ({}) => {
             and web development when I started my studies.
           </p>
           <p>
-            Currently, im finishing my studies in Lapland University of Appliend
-            Sciences.
+            Currently, I'm finishing my studies in Lapland University of
+            Appliend Sciences.
           </p>
           <p>Here are a few technologies I'm currently working with:</p>
           <ul>

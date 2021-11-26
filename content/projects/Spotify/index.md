@@ -1,12 +1,12 @@
 ---
 title: 'My Spotify'
-imageSrc: './hephoi.png'
+imageSrc: './myspotify.png'
 github: 'https://github.com/pkarabiberis/my-spotify-react'
 url: 'https://my-spotify.karabiberisapps.com'
 order: 1
 tech:
   - React
-  - Spotify API
+  - Spotify Web API
   - Docker
   - TypeScript
   - Express

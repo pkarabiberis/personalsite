@@ -9,7 +9,7 @@ tech:
   - GraphQL
   - PostgreSQL
   - Redis
-  - TypeGraphQl
+  - TypeGraphQL
   - Chakra UI
   - Apollo
   - Next.js
