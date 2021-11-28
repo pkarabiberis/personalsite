@@ -147,7 +147,7 @@ export const Work = () => {
               &nbsp;@&nbsp;
               <a
                 className="company-link text-link"
-                href={jobs[activeTab].url}
+                href={jobs[activeTab].frontmatter.url}
                 target="_blank"
                 rel="noreferrer"
               >
