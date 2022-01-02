@@ -3,7 +3,7 @@ title: 'My Spotify'
 imageSrc: './myspotify.png'
 github: 'https://github.com/pkarabiberis/my-spotify-react'
 url: 'https://my-spotify.karabiberisapps.com'
-order: 1
+order: 3
 tech:
   - React
   - Spotify Web API
@@ -13,4 +13,4 @@ tech:
   - Styled Components
 ---
 
-A web application that shows your Spotify data. Includes top artists, top tracks, recently played tracks, playlists and detailed information about each track
+A web application that shows your Spotify data. Includes top artists, top tracks, recently played tracks, playlists and detailed information about each track.

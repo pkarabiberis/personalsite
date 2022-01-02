@@ -17,4 +17,4 @@ tech:
   - Docker
 ---
 
-An issue tracker application where users can make projects and issues
+An issue tracker application where users can make projects and issues.
